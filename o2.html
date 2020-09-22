@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url("images5.jpg");
+                background-repeat:repeat;
+            }
+            div{
+                margin: 10px auto;
+                background-color:#ffffe6;
+                width: 420px;
+                height: 500px;
+                padding: 30px;
+                border: 3px solid #CCC;
+                border-radius: 10px;
+                color: #000;
+                border-color:#994d00;
+            }
+            .button{
+                padding-left: 100px;
+            }
+            button[type=submit]{
+                background-color:tomato;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2>DELIVERY ADDRESS:</h2>
+            <br>
+            <?php
+            {
+                if(isset($_POST['submit']))
+                {
+                    $name=$_POST['name'];
+                    $email=$_POST['email'];
+                    $mobile=$_POST['number'];
+                    $door=$_POST['doorno'];
+                    $street=$_POST['street'];
+                    $locality=$_POST['area'];
+                    $landmark=$_POST['landmark'];
+                    echo 'Your order will be delivered to the following address:<br><br>';
+                    echo 'NAME:'.$name.'<br>';
+                    echo 'E-MAIL ID:'.$email.'<br>';
+                    echo 'MOBILE NUMBER:'.$mobile.'<br>';
+                    echo 'ADDRESS:<br>'.$door.',<br>'.$street.',<br>'.$locality.',<br>('.$landmark.').<br>';
+                }
+            }
+            ?>
+            <br>
+            <form action="o3.php" method="post">
+                <button type="submit" name="submit1">PLACE ORDER</button>
+            </form>
+            <br>
+            <br>
+            <p><b>PAYMENT METHOD:</b> Cash on delivery</p>
+        </div>
+    </body>
